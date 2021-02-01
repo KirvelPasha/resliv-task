@@ -1,9 +1,14 @@
 package com.resliv.dto;
 
-public class CountryDto {
+public class CityDto {
     private String name;
-    private String info;
 
+    public CityDto(String name, String info) {
+        this.name = name;
+    }
+
+    public CityDto() {
+    }
 
     public String getName() {
         return name;
@@ -13,11 +18,4 @@ public class CountryDto {
         this.name = name;
     }
 
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
 }

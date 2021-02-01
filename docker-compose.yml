@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  pgdata:
+
+services:
+
+  city:
+    build: web/
+    container_name: city-service
+    ports:
+      - "8081:8081"
+    links:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    container_name: resliv-db-service
+    ports:
+      - "5431:5432"
+    hostname: db
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=resliv_task
+    volumes:
+      - pgdata:/var/lib/postgresql/data
