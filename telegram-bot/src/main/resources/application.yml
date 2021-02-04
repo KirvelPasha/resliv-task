@@ -1,0 +1,10 @@
+bot:
+  name: CityHelperResliv_bot
+  token:
+
+spring:
+  profiles:
+    active: local
+
+server:
+  port: 8082

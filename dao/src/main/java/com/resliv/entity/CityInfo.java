@@ -32,9 +32,6 @@ public class CityInfo extends BaseEntity {
         this.info = info;
     }
 
-    public City getCity() {
-        return city;
-    }
 
     public void setCity(City city) {
         this.city = city;
@@ -59,7 +56,6 @@ public class CityInfo extends BaseEntity {
     public String toString() {
         return "CityInfo{" +
                 "info='" + info + '\'' +
-                ", city=" + city +
                 '}';
     }
 }

@@ -12,4 +12,8 @@ public interface CityInfoService {
     void deleteById(Integer id);
 
     CityInfo save(CityInfoDto cityInfoDto);
+
+    CityInfo getCityInfoById(Integer id);
+
+    CityInfo update(CityInfoDto cityInfoDto);
 }

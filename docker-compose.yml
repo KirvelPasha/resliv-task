@@ -13,6 +13,14 @@ services:
     links:
       - db
 
+  telegram:
+    build: telegram-bot/
+    container_name: telegram-bot
+    ports:
+      - "8082:8082"
+    links:
+      - db
+
   db:
     image: postgres
     restart: always

@@ -1,8 +1,26 @@
 package com.resliv.dto;
 
 public class CityInfoDto {
+    private Integer id;
     private String info;
-    private String name;
+    private String cityName;
+
+    public CityInfoDto(Integer id, String info, String cityName) {
+        this.id = id;
+        this.info = info;
+        this.cityName = cityName;
+    }
+
+    public CityInfoDto() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getInfo() {
         return info;
@@ -12,11 +30,11 @@ public class CityInfoDto {
         this.info = info;
     }
 
-    public String getName() {
-        return name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 }

@@ -18,7 +18,7 @@ public class CityInfoConverter {
     public CityInfo converter(CityInfoDto cityInfoDto) {
         CityInfo cityInfo = new CityInfo();
         cityInfo.setInfo(cityInfoDto.getInfo());
-        cityInfo.setCity(cityService.getCityByName(cityInfoDto.getName()));
+        cityInfo.setCity(cityService.getCityByName(cityInfoDto.getCityName()));
         return cityInfo;
     }
 

@@ -21,7 +21,7 @@ public class CityInfoController {
     }
 
     @GetMapping()
-    public ResponseEntity<CityInfoList> getCountyByName(@RequestParam("cityName") String cityName) {
+    public ResponseEntity<CityInfoList> getInfoByName(@RequestParam("cityName") String cityName) {
         CityInfoList cityInfoList = new CityInfoList(cityInfoService.getCityInfoByCityName(cityName));
         return new ResponseEntity<>(cityInfoList, HttpStatus.OK);
     }
@@ -38,6 +38,11 @@ public class CityInfoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @PutMapping()
+    ResponseEntity<CityInfo> update(@RequestBody CityInfoDto cityInfoDto) {
+
+        return new ResponseEntity<>(cityInfoService.update(cityInfoDto), HttpStatus.OK);
+    }
 
 
 }
