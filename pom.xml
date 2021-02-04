@@ -50,15 +50,4 @@
             <version>9.4-1201-jdbc41</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-        <finalName>resliv-task</finalName>
-    </build>
-
 </project>

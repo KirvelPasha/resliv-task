@@ -4,7 +4,7 @@ bot:
 
 spring:
   profiles:
-    active: local
+    active: docker
 
 server:
   port: 8082
