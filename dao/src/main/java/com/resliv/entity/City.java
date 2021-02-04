@@ -1,20 +1,19 @@
 package com.resliv.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
+
 
 @Entity
 @Table(name = "CITY")
 public class City extends BaseEntity {
     private String name;
 
-    @OneToMany(mappedBy = "city")
-    private Set<CityInfo> cityInfos;
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<CityInfo> cityInfos;
 
-    public City(Integer id, String name, Set<CityInfo> cityInfos) {
+    public City(Integer id, String name, List<CityInfo> cityInfos) {
         super(id);
         this.name = name;
         this.cityInfos = cityInfos;
@@ -30,6 +29,10 @@ public class City extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<CityInfo> getCityInfos() {
+        return cityInfos;
     }
 
     @Override

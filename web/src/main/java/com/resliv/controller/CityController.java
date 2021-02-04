@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/cities")
 public class CityController {
@@ -16,6 +18,11 @@ public class CityController {
     @Autowired
     public CityController(CityService cityService) {
         this.cityService = cityService;
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<City>> getAll() {
+        return new ResponseEntity<>(cityService.getAll(), HttpStatus.OK);
     }
 
     @PostMapping()
@@ -29,4 +36,9 @@ public class CityController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+
+    @PutMapping()
+    ResponseEntity<City> update(@RequestBody CityDto cityDto) {
+        return new ResponseEntity<>(cityService.update(cityDto), HttpStatus.OK);
+    }
 }

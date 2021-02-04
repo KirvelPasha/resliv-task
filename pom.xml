@@ -12,7 +12,6 @@
         <module>dao</module>
         <module>service</module>
         <module>web</module>
-        <module>telegram-bot</module>
     </modules>
 
     <properties>
